@@ -17,7 +17,8 @@ and open the template in the editor.
             <c:if test="#{login.loggedIn}">
                 <p>Title: <h:inputText value="#{posts.currentPost.title}" /></p>
                 <p><h:inputTextarea value="#{posts.currentPost.content}" /></p>
-                <h:commandButton value="Save" action="#{posts.savePost(login.currentUser)}" />                
+                <h:commandButton value="Save" action="#{posts.savePost(login.currentUser)}" />  
+                <h:commandButton value="Delete" action="#{posts.deletePost(login.currentUser)}" />
             </c:if>
             <c:if test="#{!login.loggedIn}"><h1>Must be Logged In to Add or Edit</h1></c:if>
             <h:commandButton value="Cancel" action="#{posts.cancelPost}" />
